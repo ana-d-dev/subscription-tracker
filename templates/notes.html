@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Subscription Notes</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main class="auth-page">
+        <div class="auth-card subscription-details-card">
+            <h1>{{ subscription_detail['service'] }}</h1>
+            <p>Notes</p>
+            <div class="notes-box">
+                {% if subscription_detail['notes'] %}
+                    <p>{{ subscription_detail['notes'] }}</p>
+                {% else %}
+                    <p>No notes added.</p>
+                {% endif %}
+            </div>
+            <div class="details-actions">
+                <a href="{{ url_for('edit_note', subscription_id = subscription_detail['id']) }}" class="edit-button">Edit Note</a>
+                <a href="{{ url_for('my_subscriptions') }}" class="back-button">Back</a>
+                <a href="{{ url_for('remove_subscription', subscription_id=subscription_detail['id']) }}" class="delete-button">Delete</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Subscriptions</title>
+
+    {% include 'head.html' %}
+</head>
+
+<body>
+     <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main class="auth-page">
+        <div class="subscription-card">
+            <div class="subscription-header">
+                <div>
+                    <h1>My Subscriptions</h1>
+                    <p>
+                        Manage your active subscriptions and track renewal dates.
+                    </p>
+                </div>
+                <a href="{{ url_for('add_subscription') }}" class="add-button">Add Subscription</a>
+            </div>
+
+
+            <!-- SUMMARY -->
+            <div class="subscription-summary">
+                {% for key, value in total.items() %}
+                    <div class="summary-box">
+                        <h3>Total spending {{ key }}</h3>
+                        <p>{{ value }}</p>
+                    </div>
+                {% endfor %}
+                <div class="summary-box">
+                    <h3>Total Subscriptions</h3>
+                    <p>{{ all_subscriptions|length }}</p>
+                </div>
+            </div>
+
+
+            <div class="table-wrapper">
+                <table class="subscription-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Plan</th>
+                            <th>Billing cycle</th>
+                            <th>Started on</th>
+                            <th>Next payment</th>
+                            <th>Notes</th>
+                            <th>Created at</th>
+                            <th>Updated at</th>
+                            <th>Auto Renew</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for sub in all_subscriptions %}
+                            <tr>
+                                <td>{{ sub['service'].capitalize() }}</td>
+                                <td>{{ sub['price'] }} {{ sub['currency'] }}</td>
+                                <td>{{ sub['category'] }}</td>
+                                <td>{{ sub['plan'] }}</td>
+                                <td>{{ sub['billing_cycle'] }}</td>
+                                <td>{{ sub['started_on'].strftime('%d.%m.%Y') }}</td>
+                                <td>{{ sub['next_payment'].strftime('%d.%m.%Y') }}</td>
+                                <td><a href="{{ url_for('subscription_details', subscription_id=sub['id']) }}" class="view-button">View</a></td>
+                                <td>{{ sub['created_at'].strftime('%d.%m.%Y') }}</td>
+                                <td>{{ sub['updated_at'].strftime('%d.%m.%Y') }}</td>
+                                <td class="status-cell"><span class="{{ 'status-active' if not sub['auto_renew'] == 'disabled' else 'status-inactive' }}">{{ sub['auto_renew'] }}</span></td>
+                                <td>
+                                    <a href="{{ url_for('edit_subscription', subscription_id=sub['id']) }}" class="edit-button">Edit</a>
+                                    <a href="{{ url_for('remove_subscription', subscription_id=sub['id']) }}" class="delete-button">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/subscriptions.js') }}"></script>
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+
+</html>

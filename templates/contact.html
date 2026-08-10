@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact - SubTrack</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Contact</h1>
+                <p>
+                    Have questions, feedback, or want to learn more about
+                    SubTrack? Feel free to get in touch.
+                </p>
+                <p>
+                    This project was created as a demonstration of backend
+                    development, database design, and web application
+                    architecture.
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='contact.jpg') }}" alt="Contact">
+            </div>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Email</h3>
+                <p>
+                    You can contact me through my email address for questions,
+                    feedback, or opportunities related to this project.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Project feedback</h3>
+                <p>
+                    Suggestions and feedback help improve the application
+                    design, user experience, and functionality.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Development</h3>
+                <p>
+                    SubTrack demonstrates skills in Python, Flask,
+                    PostgreSQL, SQLAlchemy, HTML, and CSS.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="cta">
+            <h2>Get in touch</h2>
+            <p>
+                Interested in the project or want to discuss development?
+                Feel free to reach out.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="mailto:your-email@example.com">Send email</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

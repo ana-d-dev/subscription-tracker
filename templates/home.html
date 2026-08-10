@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Subscription tracker</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Keep every subscription under control</h1>
+                <p>
+                    Track your recurring payments, renewal dates,
+                    and monthly expenses in one simple dashboard.
+                </p>
+
+                <div class="hero-buttons">
+                    {% if logged_in %}
+                        <a href="{{ url_for('my_subscriptions') }}">My subscriptions</a>
+                        <a href="{{ url_for('profile') }}">Profile</a>
+                    {% else %}
+                        <a href="{{ url_for('registration') }}">Get Started</a>
+                        <a href="{{ url_for('about') }}">Learn More</a>
+                    {% endif %}
+                </div>
+
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/logos.jpg') }}" alt="logos">
+            </div>
+        </section>
+
+
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>Track services</h3>
+                <p>Add all your subscriptions in one place.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Renewal reminders</h3>
+                <p>Never miss an upcoming payment.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Expense overview</h3>
+                <p>See how much you spend every month.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h2>Ready to organize your subscriptions?</h2>
+            <p>
+                Create a free account and start tracking today.
+            </p>
+            <div class="cta-buttons">
+                {% if logged_in %}
+                    <a href="{{ url_for('my_subscriptions') }}">My subscriptions</a>
+                    <a href="{{ url_for('profile') }}">Profile</a>
+                {% else %}
+                    <a href="{{ url_for('registration') }}">Get Started</a>
+                    <a href="{{ url_for('about') }}">Learn More</a>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

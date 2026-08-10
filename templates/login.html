@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main class="auth-page">
+        <div class="auth-card">
+            <h1>Welcome Back</h1>
+            <p>Sign in to continue managing your subscriptions.</p>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                {% if error %}
+                    <p> {{ error }}</p>
+                {% endif %}
+
+                <div class="form-group">
+                    {{ form.username.label }}
+                    {{ form.username() }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password() }}
+                </div>
+
+                {{ form.login() }}
+            </form>
+            <p class="auth-link">
+                Don't have an account?
+                <a href="{{ url_for ('registration') }}">Create one</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

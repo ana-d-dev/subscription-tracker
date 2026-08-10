@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Terms of Use - SubTrack</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Terms of use</h1>
+                <p>
+                    By using SubTrack, you acknowledge that this application
+                    is a demonstration project created for educational and
+                    portfolio purposes.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='terms.jpg') }}" alt="Terms">
+            </div>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Application purpose</h3>
+                <p>
+                    SubTrack helps users organize subscription information
+                    and understand how a subscription management system can
+                    be designed and implemented.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>User responsibility</h3>
+                <p>
+                    Users are responsible for keeping their account
+                    information accurate and maintaining the security of
+                    their login credentials.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>Availability</h3>
+                <p>
+                    Because SubTrack is a portfolio project, features and
+                    availability may change during development.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="cta">
+            <h2>Demo application</h2>
+            <p>
+                This application is designed to showcase software
+                development skills including Flask, SQLAlchemy, PostgreSQL,
+                authentication, and responsive web design.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

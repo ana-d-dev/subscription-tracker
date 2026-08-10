@@ -1,0 +1,50 @@
+{% if not logged_in %}
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{{ url_for('home') }}"><h2>SubTrack</h2></a>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for ('home') }}">Home</a>
+                <a href="{{ url_for ('features') }}">Features</a>
+                <a href="{{ url_for ('about') }}">About</a>
+                <a href="{{ url_for('tech_stack') }}">Tech Stack</a>
+                <a href="{{ url_for('how_to_use') }}">How to use?</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="{{ url_for ('login') }}">Log In</a>
+                <a href="{{ url_for ('registration') }}">Register</a>
+            </div>
+        </nav>
+    </header>
+{% else %}
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{{ url_for('home') }}"><h2>SubTrack</h2></a>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for ('home') }}">Home</a>
+                <a href="{{ url_for ('features') }}">Features</a>
+                <a href="{{ url_for ('about') }}">About</a>
+                <a href="{{ url_for('tech_stack') }}">Tech Stack</a>
+                <a href="{{ url_for('how_to_use') }}">How to use?</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="{{ url_for ('my_subscriptions') }}">My Subscriptions</a>
+                <a href="{{ url_for ('logout') }}">Logout</a>
+            </div>
+        </nav>
+    </header>
+{% endif %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-container">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}

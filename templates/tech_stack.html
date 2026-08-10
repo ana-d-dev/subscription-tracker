@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tech Stack - SubTrack</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Technology stack</h1>
+                <p>
+                    SubTrack is built using modern web technologies with a
+                    focus on clean architecture, maintainability, and
+                    security. Every technology was selected to demonstrate
+                    practical backend development skills while delivering a
+                    responsive user experience.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='tech-stack.jpg') }}" alt="Technology Stack">
+            </div>
+        </section>
+
+
+        <!-- Backend -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>🐍 Python</h3>
+                <p>
+                    Python is the core programming language used throughout
+                    the application. It powers the business logic, data
+                    processing, authentication, and communication with the
+                    database.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>🌐 Flask</h3>
+                <p>
+                    Flask provides the web framework responsible for routing,
+                    handling requests, rendering templates, managing user
+                    sessions, and connecting the frontend with the backend.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>🗄 PostgreSQL</h3>
+                <p>
+                    PostgreSQL stores application data including users and
+                    subscriptions. It provides a reliable relational database
+                    with support for complex queries and data integrity.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Database -->
+        <section class="cta">
+            <h2>Database & security</h2>
+            <p>
+                The application uses SQLAlchemy Core for database operations,
+                allowing SQL queries to be written in Python while maintaining
+                clear and maintainable code. User passwords are securely
+                hashed before being stored in the database, helping protect
+                user accounts.
+            </p>
+        </section>
+
+
+        <!-- Frontend -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>⚙ SQLAlchemy core</h3>
+                <p>
+                    SQLAlchemy core manages database connections, table
+                    definitions, queries, inserts, updates, and deletes using
+                    a powerful SQL expression language.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 HTML & CSS</h3>
+                <p>
+                    HTML provides the page structure while CSS creates a
+                    clean, modern, and responsive interface designed for both
+                    desktop and mobile devices.
+                </p>
+            </div>
+           <div class="feature-card">
+                <h3>📝 Jinja2 templates</h3>
+                <p>
+                    Jinja2 connects the Flask backend with the frontend by
+                    dynamically rendering pages, passing data, and creating
+                    reusable components such as navigation and layouts.
+                </p>
+           </div>
+        </section>
+
+
+        <!-- Development -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>🔐 Authentication</h3>
+                <p>
+                    Secure user authentication ensures that each account can
+                    safely access its own data through login and registration
+                    functionality.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>📁 Project structure</h3>
+                <p>
+                    The application follows a modular project structure,
+                    separating database logic, routes, templates,
+                    configuration, and business logic into dedicated modules
+                    for easier maintenance.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>🚀 Deployment ready</h3>
+                <p>
+                    The project is designed with production deployment in
+                    mind, using environment variables for configuration and a
+                    structure that can be deployed to a Linux server.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

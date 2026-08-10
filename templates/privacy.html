@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Privacy Policy - SubTrack</title>
+
+     <!-- Head -->
+    {% include 'head.html' %}
+</head>
+
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Privacy policy</h1>
+                <p>
+                    SubTrack is a portfolio project created to demonstrate
+                    backend development, database management, and web
+                    application architecture.
+                </p>
+
+                <p>
+                    This page explains how user information is handled
+                    within the application.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='privacy.jpg') }}" alt="Privacy">
+            </div>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Account information</h3>
+                <p>
+                    When creating an account, users may provide information
+                    such as username and password. This information is
+                    stored only for authentication and account management
+                    purposes.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>Password security</h3>
+                <p>
+                    Passwords are not stored as plain text. They are processed
+                    using secure password hashing techniques before being
+                    saved in the database.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>Data usage</h3>
+                <p>
+                    User data is used only to provide application features
+                    such as account access and subscription tracking.
+                    Personal information is not sold or shared.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="cta">
+            <h2>Project purpose</h2>
+            <p>
+                SubTrack was built as a demonstration project showing how
+                authentication, databases, backend logic, and frontend
+                design can work together in a modern web application.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

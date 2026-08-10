@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+
+    <!-- Profile Section -->
+    <main class="auth-page">
+        <div class="auth-card">
+            <h1>Welcome, {{ user['username'] }}</h1>
+            <p>
+                Manage your account and subscription preferences.
+            </p>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" value="{{ user['username'] }}" disabled>
+            </div>
+            <div class="form-group">
+                <label>Active subscriptions</label>
+                <input type="text" value="{{ number_of_subscriptions }}" disabled>
+            </div>
+            <div class="hero-buttons">
+                <a href="{{ url_for('home') }}">Dashboard</a>
+                <a href="{{ url_for('login') }}">Logout</a>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Subscriptions</h3>
+            <p>
+                View and manage all your active subscriptions.
+            </p>
+        </div>
+        <div class="feature-card">
+            <h3>Price Tracking</h3>
+            <p>
+                Compare subscription prices and find better deals.
+            </p>
+        </div>
+        <div class="feature-card">
+            <h3>Account Settings</h3>
+            <p>
+                Update your profile and security settings.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+</body>
+</html>

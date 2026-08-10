@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About - SubTrack</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About SubTrack</h1>
+                <p>
+                    SubTrack is a web application designed to help people
+                    organize and manage all of their subscriptions in one
+                    simple dashboard. Whether you use streaming platforms,
+                    software services, or other memberships, SubTrack keeps
+                    everything in one organized place.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='about.jpg') }}" alt="About SubTrack">
+            </div>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>My mission</h3>
+                <p>
+                    My goal is to make subscription management simple and
+                    intuitive. Instead of keeping track of services across
+                    multiple apps or notes, everything is available from a
+                    single dashboard.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>What you can do</h3>
+                <p>
+                    Add subscriptions, organize them by category, view all
+                    your services in one place, and quickly find the
+                    information you need whenever you need it.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>Built with</h3>
+                <p>
+                    SubTrack is built using Python, Flask, PostgreSQL,
+                    SQLAlchemy, HTML, and CSS with a focus on
+                    clean code, security, and performance.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="cta">
+            <h2>Why I built SubTrack</h2>
+            <p>
+                I created SubTrack as a portfolio project to practice
+                backend web development and build a complete application
+                from the ground up. The project combines authentication,
+                database management, responsive design, and a clean user
+                interface into a practical real-world application.
+            </p>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Simple design</h3>
+                <p>
+                    Every part of the interface is designed to be clean,
+                    modern, and easy to use, allowing users to focus on
+                    managing their subscriptions without unnecessary
+                    complexity.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>Security</h3>
+                <p>
+                    User accounts are protected using secure authentication
+                    practices, encrypted passwords, and a carefully designed
+                    backend architecture.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>Purpose</h3>
+                <p>
+                    The project demonstrates how modern web technologies can
+                    be combined to build a full-stack application that is
+                    both practical and maintainable.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

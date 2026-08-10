@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Features - SubTrack</title>
+
+    <!-- Head -->
+    {% include 'head.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'header.html' %}
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Everything you need to manage your subscriptions</h1>
+                <p>
+                    SubTrack provides all the essential tools to organize,
+                    monitor, and manage your subscriptions in one place.
+                    Designed with simplicity in mind, every feature helps
+                    you stay organized with minimal effort.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/features.jpg') }}" alt="SubTrack Features">
+            </div>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>📋 Subscription dashboard</h3>
+                <p>
+                    View all of your subscriptions in one clean dashboard.
+                    Quickly access important information without searching
+                    through multiple services.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>➕ Add new subscriptions</h3>
+                <p>
+                    Easily create and organize new subscriptions through
+                    a simple and intuitive interface.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>✏️ Edit & update</h3>
+                <p>
+                    Keep your subscription list up to date by editing
+                    information whenever your services change.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="cta">
+            <h2>Built for simplicity</h2>
+            <p>
+                Every feature in SubTrack is designed to reduce clutter
+                and make subscription management straightforward.
+                Spend less time organizing and more time enjoying the
+                services you use.
+            </p>
+        </section>
+
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>🗂 Organized categories</h3>
+                <p>
+                    Group subscriptions into categories to keep everything
+                    structured and easy to browse.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Secure accounts</h3>
+                <p>
+                    User accounts are protected with secure authentication
+                    and encrypted password storage.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Fast & responsive</h3>
+                <p>
+                    Built with modern web technologies to provide a smooth
+                    experience across desktop and mobile devices.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>
