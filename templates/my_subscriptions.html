@@ -62,7 +62,7 @@
                     <tbody>
                         {% for sub in all_subscriptions %}
                             <tr>
-                                <td>{{ sub['service'].capitalize() }}</td>
+                                <td>{{ sub['service'].capitalize().strip() }}</td>
                                 <td>{{ sub['price'] }} {{ sub['currency'] }}</td>
                                 <td>{{ sub['category'] }}</td>
                                 <td>{{ sub['plan'] }}</td>

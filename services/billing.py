@@ -1,4 +1,3 @@
-
 from dateutil.relativedelta import relativedelta
 
 def calculate_next_payment(duration, started_on, billing_cycle):
@@ -25,16 +24,16 @@ def calculate_next_payment(duration, started_on, billing_cycle):
 
 def total_price(all_subscriptions):
     totals = {
-        'EUR': 0,
-        'USD': 0,
-        'GBP': 0
+        'EUR': round(0, 2),
+        'USD': round(0, 2),
+        'GBP': round(0, 2)
     }
 
     for sub in all_subscriptions:
         currency = sub['currency']
         price = sub['price']
 
-        totals[currency] += price
+        totals[currency] += float(price)
 
     return totals
 

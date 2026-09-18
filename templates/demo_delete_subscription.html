@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Subscription</title>
+
+    <!-- Header -->
+    {% include 'header.html' %}
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'head.html' %}
+
+    <!-- Hero -->
+    <main class="auth-page">
+        <div class="delete-card">
+            <h1>Delete subscription</h1>
+
+            <p class="delete-subtitle">Are you sure you want to delete this subscription?</p>
+
+            <div class="delete-details">
+                <div class="delete-detail">
+                    <span>Service</span>
+                    <strong>{{ service }}</strong>
+                </div>
+                <div class="delete-detail">
+                    <span>Price</span>
+                    <strong>
+                        {{ price }}
+                        {{ currency }}
+                    </strong>
+                </div>
+                <div class="delete-detail">
+                    <span>Category</span>
+                    <strong>{{ category }}</strong>
+                </div>
+                <div class="delete-detail">
+                    <span>Billing cycle</span>
+                    <strong>{{ billing_cycle }}</strong>
+                </div>
+            </div>
+            <div class="delete-warning">
+                <strong>This action cannot be undone.</strong>
+            </div>
+            <form action="{{ url_for('demo_delete_subscription_post', subscription_id=subscription_id) }}" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="delete-actions">
+                    <a href="{{ url_for('demo_all_subscriptions') }}" class="cancel-button">Cancel</a>
+                    {{ form.delete(class="confirm-delete-button") }}
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

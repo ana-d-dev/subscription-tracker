@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, Length, Regexp, NumberRange
 
 
 class AddSubscription(FlaskForm):
-    service = StringField('service', validators=[DataRequired(), Length(min=2, max=50), Regexp(r"^[a-zA-Z0-9 .+\-]+$")])
-    price = DecimalField('price', validators=[DataRequired(), NumberRange(min=0, max=10000)])
+    service = StringField('Service', validators=[DataRequired(), Length(min=2, max=50), Regexp(r"^[a-zA-Z0-9 .+\-]+$")])
+    price = DecimalField('Price', validators=[DataRequired(), NumberRange(min=0, max=10000)])
     currency = SelectField(
         "Currency",
         choices=[
@@ -16,14 +16,14 @@ class AddSubscription(FlaskForm):
             ("GBP", "GBP (£)")
         ]
     )
-    billing_cycle = SelectField('billing_cycle', choices=[
+    billing_cycle = SelectField('Billing cycle', choices=[
         ('days', 'Days'),
         ('monthly', 'Monthly'),
         ('yearly', 'Yearly'),
         ('weekly', 'Weekly')
     ])
-    duration = IntegerField('duration', validators=[DataRequired(), NumberRange(min=1)])
-    started_on = DateField('started_on', format="%Y-%m-%d", validators=[DataRequired()])
+    duration = IntegerField('Duration', validators=[DataRequired(), NumberRange(min=1)])
+    started_on = DateField('Started on', format="%Y-%m-%d", validators=[DataRequired()])
     plan = StringField('Plan', validators=[DataRequired(), Length(min=1, max=50)])
     category = SelectField('category', choices=[
         ("streaming", "Streaming"),
@@ -38,7 +38,7 @@ class AddSubscription(FlaskForm):
         ("fitness", "Fitness"),
         ("other", "Other")
     ])
-    notes = StringField('notes', validators=[Length(max=100)])
+    notes = StringField('Notes', validators=[Length(max=100)])
     auto_renew = SelectField('Automatic payment', choices=[
         ("active", "Active"),
         ("disabled", "Disabled")
@@ -47,14 +47,14 @@ class AddSubscription(FlaskForm):
 
 
 class EditSubscription(FlaskForm):
-    notes = StringField('notes', validators=[Length(max=100)])
+    notes = StringField('Notes', validators=[Length(max=100)])
     submit = SubmitField('Submit')
 
 
 class DeleteSubscription(FlaskForm):
     service = StringField('service')
-    price = DecimalField('price', validators=[DataRequired(), NumberRange(min=0, max=10000)])
-    category = SelectField('category', choices=[
+    price = DecimalField('Price', validators=[DataRequired(), NumberRange(min=0, max=10000)])
+    category = SelectField('Category', choices=[
             ("streaming", "Streaming"),
             ("music", "Music"),
             ("gaming", "Gaming"),

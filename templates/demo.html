@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SubTrack Demo</title>
+
+    {% include 'head.html' %}
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    <main>
+
+        <!-- DEMO HERO -->
+        <section class="demo-hero">
+            <div class="demo-content">
+                <span class="demo-label">SUBTRACK DEMO</span>
+                <h1>Try SubTrack before creating an account.</h1>
+
+                <p>
+                    Explore how SubTrack helps you keep track of your
+                    subscriptions, organize your spending, and manage
+                    important billing information.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('demo_all_subscriptions') }}">Try Demo</a>
+                    <a href="{{ url_for('how_to_use') }}">How to use?</a>
+                    <a href="{{ url_for('registration') }}">Get Started</a>
+                </div>
+
+            </div>
+
+
+            <div class="demo-preview">
+                <div class="preview-header">
+                    <div>
+                        <h3>My Subscriptions</h3>
+                        <p>Your subscriptions at a glance</p>
+                    </div>
+                    <span class="preview-button">+ Add</span>
+                </div>
+
+                <div class="preview-summary">
+                    <div>
+                        <span>Total spending</span>
+                        <strong>€42.97</strong>
+                    </div>
+
+                    <div>
+                        <span>Subscriptions</span>
+                        <strong>4</strong>
+                    </div>
+                </div>
+
+                <div class="preview-list">
+                    <div class="preview-item">
+                        <div>
+                            <strong>Netflix</strong>
+                            <span>Streaming</span>
+                        </div>
+                        <strong>€9.99</strong>
+                    </div>
+
+                    <div class="preview-item">
+                        <div>
+                            <strong>Spotify</strong>
+                            <span>Music</span>
+                        </div>
+                        <strong>€10.99</strong>
+                    </div>
+
+                    <div class="preview-item">
+                        <div>
+                            <strong>Cloud Storage</strong>
+                            <span>Cloud</span>
+                        </div>
+                        <strong>€4.99</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section class="demo-features">
+            <div class="feature-card">
+                <h3>Explore freely</h3>
+                <p>
+                    Use the demo without creating an account. Add
+                    subscriptions and explore the main features.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Manage your subscriptions</h3>
+                <p>
+                    Add, edit, and remove subscriptions just like you
+                    would with a regular SubTrack account.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Nothing is saved</h3>
+                <p>
+                    Demo data is temporary. Your changes are only part
+                    of the demo session and are not stored as a real account.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta">
+            <h2>Ready to start tracking?</h2>
+            <p>Create your account and keep your subscriptions organized in one place.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('registration') }}">Get Started</a>
+                <a href="{{ url_for('demo_all_subscriptions') }}">Continue with Demo</a>
+            </div>
+        </section>
+    </main>
+
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

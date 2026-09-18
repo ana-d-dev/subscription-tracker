@@ -122,26 +122,20 @@ nav {
     gap: 1rem;
 }
 
-.hero-buttons a,
-.cta-buttons a {
-    padding: 14px 28px;
+.hero-buttons a {
+    padding: 14px 24px;
+    border: 2px solid #1e40af;
     border-radius: 12px;
-    font-weight: 600;
-    transition: .3s;
-}
-
-.hero-buttons a:first-child {
     background: #2563eb;
     color: white;
+    font-weight: 600;
+    transition: .3s;
+    box-shadow: 0 0 0 2px white;
 }
 
-.hero-buttons a:last-child {
-    border: 2px solid #2563eb;
-    color: #2563eb;
-}
-
-.hero-buttons a:hover,
-.cta-buttons a:hover {
+.hero-buttons a:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
     transform: translateY(-3px);
 }
 
@@ -159,18 +153,33 @@ nav {
     object-fit: cover;
 }
 
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 
 /* =========================
    FEATURES
 ========================= */
 
-.features {
+.features,
+.demo-features {
     width: 90%;
     max-width: 1200px;
-    margin: 80px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+.features {
+    margin: 80px auto;
+}
+
+.demo-features {
+    margin: 40px auto 80px;
 }
 
 .feature-card {
@@ -211,17 +220,24 @@ nav {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
-.cta-buttons a:first-child {
+.cta-buttons a {
+    padding: 14px 24px;
+    border: 2px solid #1e40af;
+    border-radius: 12px;
     background: white;
     color: #2563eb;
+    font-weight: 600;
+    transition: .3s;
 }
 
-.cta-buttons a:last-child {
-    border: 2px solid white;
-    color: white;
+.cta-buttons a:hover {
+    background: #eff6ff;
+    border-color: #1e40af;
+    color: #1d4ed8;
+    transform: translateY(-3px);
 }
 
 
@@ -320,9 +336,31 @@ footer {
     transform: translateY(-2px);
 }
 
-.auth-link {
+.auth-links {
     margin-top: 2rem;
     text-align: center;
+}
+
+.auth-links p {
+    margin: .4rem 0;
+}
+
+.auth-links a {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.auth-links p:last-child {
+    color: #94a3b8;
+    font-size: .9rem;
+}
+
+.auth-links p:last-child a {
+    color: #64748b;
 }
 
 
@@ -719,49 +757,6 @@ footer {
 
 
 /* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 1.5rem;
-        gap: 1rem;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .subscription-card {
-        padding: 2rem 1rem;
-    }
-
-    .subscription-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .subscription-summary {
-        flex-direction: column;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-
-/* =========================
    HOW TO USE
 ========================= */
 
@@ -791,15 +786,18 @@ footer {
     color: #1e293b;
 }
 
-.help-item p {
+.help-item p,
+.help-example p {
     color: #64748b;
     line-height: 1.7;
 }
 
 .help-image {
     margin: 1.5rem 0;
-    border-radius: 15px;
+    border-radius: 16px;
     overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
 }
 
@@ -865,9 +863,11 @@ footer {
     margin: 0;
 }
 
+
 /* =========================
    HOW TO USE - EXAMPLES
 ========================= */
+
 .help-example {
     margin-top: 2.5rem;
 }
@@ -877,23 +877,196 @@ footer {
     font-size: 1.1rem;
 }
 
-.help-example p {
-    margin-top: 1rem;
+
+/* =========================
+   DEMO
+========================= */
+
+.demo-hero {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 75vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.demo-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin: 1rem 0 1.5rem;
+}
+
+.demo-content p {
+    font-size: 1.1rem;
     color: #64748b;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-bottom: 2rem;
+}
+
+.demo-label {
+    color: #2563eb;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   DEMO PREVIEW
+========================= */
+
+.demo-preview {
+    background: white;
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.preview-header h3 {
+    margin-bottom: .3rem;
+}
+
+.preview-header p {
+    color: #64748b;
+    font-size: .9rem;
+}
+
+.preview-button {
+    background: #2563eb;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 9px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.preview-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.preview-summary div {
+    background: #f4f7fb;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.preview-summary span {
+    display: block;
+    color: #64748b;
+    font-size: .85rem;
+    margin-bottom: .4rem;
+}
+
+.preview-summary strong {
+    font-size: 1.3rem;
+}
+
+.preview-list {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.preview-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.preview-item div {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.preview-item span {
+    color: #64748b;
+    font-size: .85rem;
+}
+
+
+/* =========================
+   SPENDING PAGE
+========================= */
+
+main {
+    min-height: 70vh;
+}
+
+.spending-hero {
+    min-height: 430px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.spending-hero .hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.spending-hero .hero-content p {
+    max-width: 560px;
     line-height: 1.7;
 }
 
-.help-image {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .hero,
+    .demo-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .features,
+    .demo-features {
+        grid-template-columns: 1fr;
+    }
+
+    .subscription-card {
+        padding: 2rem 1rem;
+    }
+
+    .subscription-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .subscription-summary {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
-
-.help-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-
