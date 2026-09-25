@@ -53,7 +53,7 @@ class EditSubscription(FlaskForm):
 
 class DeleteSubscription(FlaskForm):
     service = StringField('service')
-    price = DecimalField('Price', validators=[DataRequired(), NumberRange(min=0, max=10000)])
+    price = DecimalField('Price')
     category = SelectField('Category', choices=[
             ("streaming", "Streaming"),
             ("music", "Music"),

@@ -308,6 +308,12 @@ def remove_subscription(subscription_id):
 @app.post('/delete/<int:subscription_id>')
 @login_required
 def remove_subscription_post(subscription_id):
+    form = DeleteSubscription()
+
+    if not form.validate_on_submit():
+        flash('Invalid request.', 'error')
+        return redirect(url_for('my_subscriptions'))
+
     user_id = session['user_id']
     subscription_detail = get_subscription_by_id(subscription_id, user_id)
 
@@ -557,6 +563,11 @@ def demo_delete_subscription(subscription_id):
 @app.post('/demo_delete_subscription_post/<subscription_id>')
 @demo_session_required
 def demo_delete_subscription_post(subscription_id):
+    form = DeleteSubscription()
+
+    if not form.validate_on_submit():
+        flash('Invalid request.', 'error')
+        return redirect(url_for('demo_all_subscriptions'))
 
     all_subscriptions = session['demo_all_subscriptions']
     remain_subscriptions = []
@@ -579,4 +590,4 @@ def demo_delete_subscription_post(subscription_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
