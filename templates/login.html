@@ -15,31 +15,42 @@
         <div class="auth-card">
             <h1>Welcome Back</h1>
             <p>Sign in to continue managing your subscriptions.</p>
+
             <form method="POST">
                 {{ form.hidden_tag() }}
 
-                {% if error %}
-                    <p> {{ error }}</p>
+                {% if message %}
+                    <p class="error-message">{{ message }}</p>
                 {% endif %}
 
                 <div class="form-group">
                     {{ form.username.label }}
                     {{ form.username() }}
+
+                    {% for error in form.username.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
                 </div>
 
                 <div class="form-group">
                     {{ form.password.label }}
                     {{ form.password() }}
+
+                    {% for error in form.password.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
                 </div>
 
                 {{ form.login() }}
             </form>
+
             <p class="auth-link">
                 Don't have an account?
-                <a href="{{ url_for ('registration') }}">Create one</a>
+                <a href="{{ url_for('registration') }}">Create one</a>
             </p>
         </div>
     </main>
+
 
     <!-- Footer -->
     {% include 'footer.html' %}

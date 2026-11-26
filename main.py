@@ -42,7 +42,7 @@ def registration():
 
 @app.post('/registration')
 @limiter.limit("5 per minute")
-@limiter.limit("100 per week")
+@limiter.limit("100 per 7 days")
 @limiter.limit("1000 per month")
 def registration_post():
     form = RegistrationForm()
@@ -63,6 +63,9 @@ def registration_post():
 
         return render_template('registration.html', form=form, message='Username is taken')
 
+    form.username.data = ''
+    form.password.data = ''
+
     return render_template('registration.html', form=form)
 
 
@@ -74,7 +77,7 @@ def login():
 
 @app.post('/login')
 @limiter.limit("5 per minute")
-@limiter.limit("100 per week")
+@limiter.limit("100 per 7 days")
 @limiter.limit("1000 per month")
 def login_post():
     form = LoginForm()
@@ -90,7 +93,13 @@ def login_post():
             flash(f'You are successfully logged in. Hello {username}!', 'success')
             return redirect(url_for('profile'))
 
+        form.username.data = ''
+        form.password.data = ''
+
         return render_template('login.html', form=form, message='Username or password incorrect.')
+
+    form.username.data = ''
+    form.password.data = ''
 
     return render_template('login.html', form=form)
 
@@ -519,6 +528,9 @@ def demo_edit_subscription_post(subscription_id):
                 sub['billing_cycle'] = form.billing_cycle.data
                 sub['duration'] = form.duration.data
                 sub['started_on'] = form.started_on.data.strftime('%d.%m.%Y')
+                sub['next_payment'] = calculate_next_payment(
+                    form.duration.data, form.started_on.data, form.billing_cycle.data
+                ).strftime('%d.%m.%Y')
                 sub['plan'] = form.plan.data
                 sub['notes'] = form.notes.data
                 sub['auto_renew'] = form.auto_renew.data

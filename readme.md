@@ -86,7 +86,7 @@ Requirements: Python 3.10 or later and a PostgreSQL server.
 5. Create the tables and start the development server from the project root:
 
    ```bash
-   python db/create_table.py
+   python -m db.create_table
    python main.py
    ```
 

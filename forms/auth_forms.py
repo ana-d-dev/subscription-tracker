@@ -8,14 +8,17 @@ class RegistrationForm(FlaskForm):
 
     username = StringField('username', validators=[
         DataRequired(),
-        Length(min=4, max=10),
-        Regexp(r"^[a-zA-Z0-9]+$"),
+        Length(min=4, max=10, message="Username must contain between 4 and 10 characters."),
+        Regexp(r"^[a-zA-Z0-9]+$", message="Username can contain only letters and numbers."),
     ])
 
     password = (PasswordField('password', validators=[
         DataRequired(),
-        Length(min=8, max=21),
-        Regexp(r"^(?=(?:.*\d){2,})(?=(?:.*[a-zA-Z]){2,})(?=(?:.*[^a-zA-Z0-9]){2,}).*$")
+        Length(min=8, max=21, message="Password must contain between 8 and 21 characters."),
+        Regexp(
+            r"^(?=(?:.*\d){2,})(?=(?:.*[a-zA-Z]){2,})(?=(?:.*[^a-zA-Z0-9]){2,}).*$",
+               message="Password must contain at least 2 letters, 2 numbers, and 2 special characters."
+        )
     ]))
     submit = SubmitField('Register')
 

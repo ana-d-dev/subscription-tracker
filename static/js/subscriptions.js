@@ -12,12 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
         0: "text",      // Service
         1: "number",    // Price
         2: "text",      // Category
-        3: "text",      // Billing cycle
-        4: "date",      // Started on
-        5: "date",      // Next payment
-        7: "date",      // Created at
-        8: "date",      // Updated at
-        9: "text"       // Auto Renew
+        3: "text",      // Plan
+        4: "text",      // Billing cycle
+        5: "date",      // Started on
+        6: "date",      // Next payment
+        8: "date",      // Created at
+        9: "date",      // Updated at
+        10: "text"      // Auto Renew
     };
 
     headers.forEach((header, columnIndex) => {

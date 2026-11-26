@@ -15,25 +15,35 @@
         <div class="auth-card">
             <h1>Create Account</h1>
             <p>Start using the tracking subscription today.</p>
+
             <form action="{{ url_for('registration_post') }}" method="POST">
                 {{ form.hidden_tag() }}
 
-                {% if error %}
-                    <p> {{ error }}</p>
+                {% if message %}
+                    <p class="error-message">{{ message }}</p>
                 {% endif %}
 
                 <div class="form-group">
                     {{ form.username.label }}
                     {{ form.username() }}
+
+                    {% for error in form.username.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
                 </div>
 
                 <div class="form-group">
                     {{ form.password.label }}
                     {{ form.password() }}
+
+                    {% for error in form.password.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
                 </div>
 
                 {{ form.submit() }}
             </form>
+
             <div class="auth-links">
                 <p>
                     Already have an account?
@@ -47,6 +57,7 @@
             </div>
         </div>
     </main>
+
 
     <!-- Footer -->
     {% include 'footer.html' %}
