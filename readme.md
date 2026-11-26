@@ -18,7 +18,7 @@ This is a portfolio project, not a production-ready subscription or payment serv
 
 ![SubTrack Spending](static/images/total_spending.png)
 
-## Feature
+## Features
 
 - Register, log in, and manage an account.
 - Create, view, edit, and delete subscriptions.
